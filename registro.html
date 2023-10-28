@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
+    <title>Registrarse - IndeNetwork</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo de IndeNetwork">
+            </a>
+        </div>
+        <h1 style="margin-left: 105px;">Registrarse en IndeNetwork</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="login.html">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="registration-form">
+            <h2>Regístrate</h2>
+            <form action="procesar_registro.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" required>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                <input type="password" name="contrasena" placeholder="contrasena" required>
+                <input type="text" name="grado" placeholder="Grado">
+                <textarea name="intereses" placeholder="Intereses"></textarea>
+                <input type="file" name="foto_perfil" accept="image/*">
+                <textarea name="biografia" placeholder="Biografía"></textarea>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

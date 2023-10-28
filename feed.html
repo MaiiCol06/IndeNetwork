@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feed.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Muro - IndeNetwork</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: #fff;">
+            <h1>IndeNetwork - Muro</h1>
+        </a>
+        <img src="logo.png" alt="Logo de IndeNetwork">
+        <nav>
+            <a href="perfil.html">Perfil</a>
+            <a href="grupos.html">Grupos</a>
+        </nav>
+    </header>
+
+    <button id="btnNuevaPub">+</button>
+
+    <div class="modal" id="modalNuevaPub">
+        <div class="formulario">
+            <h2>Nueva Publicación</h2>
+            <span class="close">&times;</span>
+
+            <form id="form-de-publicacion" action="procesar_publicar.php" method="POST" enctype="multipart/form-data">
+                <textarea name="texto" placeholder="Trasmite lo que piensas"></textarea>
+                <input type="file" name="imagen" accept="image/*">
+                <button type="submit">Publicar</button>
+            </form>            
+        </div>
+    </div>
+
+    <main id="post-container">
+      
+    </main>
+
+    <script src="feed.js"></script>
+</body>
+</html>

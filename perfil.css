@@ -1,0 +1,35 @@
+body {
+    background-color: #f0f0f0;
+    font-family: JetBrains Mono, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF6F61;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header img {
+    max-height: 50px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}

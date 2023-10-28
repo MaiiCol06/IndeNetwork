@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f0f0;
+    font-family: JetBrains Mono, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF6F61;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header h1 {
+    font-size: 27px;
+}
+
+header img {
+    max-height: 47px;
+}
+
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.group {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.group img {
+    max-width: 100%;
+}
+
+/* Otros estilos específicos según las necesidades de tu diseño */

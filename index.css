@@ -1,0 +1,128 @@
+body {
+    background-color: #fff;
+    font-family: 'JetBrains Mono', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF6F61;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+.header .logo {
+    margin-right: 20px;
+    max-width: calc(40% - 20px);
+}
+
+.header .logo a {
+    text-decoration: none;
+}
+
+header img {
+    max-height: 70px;
+    margin-right: 10px;
+}
+
+.header .title h1 {
+    font-family: 'JetBrains Mono', Arial, sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFA07A;
+}
+
+#caracteristicas {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#caracteristicas h2 {
+    font-size: 24px;
+}
+
+#caracteristicas ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#caracteristicas li {
+    margin-top: 5px;
+}
+
+#acerca-de {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#caracteristicas li {
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#caracteristicas li:after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: #FF6F61;
+    margin: 10px auto;
+}
+
+
+
+#acerca-de h2 {
+    font-size: 24px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #FF6F61;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #FFA07A;
+}

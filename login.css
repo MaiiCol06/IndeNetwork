@@ -1,0 +1,93 @@
+body {
+    background-color: #f0f0f0;
+    font-family: JetBrains Mono, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #FF6F61;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo {
+    margin-right: 20px;
+    max-width: calc(40% - 20px);
+}
+
+.header img {
+    max-height: 70px;
+    max-width: 100px; /* Ajusta este valor según tus necesidades */
+    margin-right: 10px;
+}
+
+.header .title h1 {
+    font-family: 'JetBrains Mono', Arial, sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #FF6F61;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #FF6F61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF4136;
+}
+
+a {
+    color: #FF6F61;
+    text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline; 
+}
+
+nav a {
+   color:#fff; 
+   text-decoration:none; 
+   margin-left:auto; 
+   margin-right:auto; 
+   transition : color .3s; 
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfil.css">
+    <title>Mi Perfil - IndeNetwork</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: #fff;">
+            <h1>IndeNetwork</h1>
+        </a>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo de IndeNetwork">
+        </a>
+        <nav>
+            <a href="feed.html">Inicio</a>
+            <a href="grupos.html">Grupos</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="perfil-container">
+            <?php include('info_perfil.php'); ?> 
+            <h1>Perfil de <?php echo $nombre_usuario; ?></h1>
+            <!-- Otros campos de interés -->
+        </div>
+    </main>
+</body>
+</html>
