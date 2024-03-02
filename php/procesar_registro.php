@@ -7,9 +7,9 @@ if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_
 }
 
 $servidor = "localhost";
-$usuario = "id21450707_maicol";
+$usuario = "id21948119_maiicol06";
 $contrasena = "Smith@2006";
-$basedatos = "id21450707_indenetwork";
+$basedatos = "id21948119_indenet";
 
 $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
 

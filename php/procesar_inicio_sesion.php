@@ -6,9 +6,9 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servidor = "localhost";
-    $usuario = "id21450707_maicol";
+    $usuario = "id21948119_maiicol06";
     $contrasena = "Smith@2006";
-    $basedatos = "id21450707_indenetwork";
+    $basedatos = "id21948119_indenet";
 
     $conexion = new mysqli($servidor, $usuario, $contrasena, $basedatos);
 
