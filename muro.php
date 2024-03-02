@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 date_default_timezone_set('America/Bogota');
 
 $servidor = "localhost";
-$usuario = "id21450707_maicol";
+$usuario = "id21948119_maiicol06";
 $contrasena = "Smith@2006";
-$basedatos = "id21450707_indenetwork";
+$basedatos = "id21948119_indenet";
 
 $conexion = mysqli_connect($servidor, $usuario, $contrasena, $basedatos);
 
