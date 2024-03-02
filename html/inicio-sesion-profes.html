@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeNetwork - Inicio de Sesión</title>
+    <link rel="stylesheet" href="../css/inicio-sesion-profes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../img/pagina/Logo.png">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                    <img src="../img/pagina/Logo.png" alt="IndeNetwork">
+                </a>
+                <h1>
+                    IndeNetwork  -  Ingreso profesores
+                </h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../html/index.html">
+                        <i class="material-icons">home</i>
+                        <span>Principal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/inicio-sesion.html">
+                        <i class="material-icons">
+                            arrow_back
+                        </i>
+                        <span>
+                            Regresar
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="inicio-sesion-form">
+            <h2>Inicia Sesión</h2>
+            <form action="../php/procesar_inicio_sesion_profes.php" method="POST">
+                <div class="form-group">
+                    <label for="correo">Documento o Correo Electrónico</label>
+                    <input type="text" id="correo" name="correo" placeholder="CC / Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </section>
+    </main>
+
+    <main>
+        <section class="inicio-sesion-form">
+            <h3>
+                ¿Problemas al ingresar?
+            </h3>
+            <p>
+                *Si presentas problemas al ingresar o no te encuentras registrado como profesor y lo éres, acércate y comunicaselo a Administración o Rectoría*
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var usuarioLogueado = localStorage.getItem("es_profesor");
+            if (usuarioLogueado === "true") {
+                window.location.href = "../html/muro.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

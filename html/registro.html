@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeNetwork - Registro</title>
+    <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../img/pagina/Logo.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                    <img src="../img/pagina/Logo.png" alt="IndeNetwork">
+                </a>
+                <h1>
+                    IndeNetwork  -  Registro
+                </h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../index.html">
+                        <i class="material-icons">home</i>
+                        <span>Principal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/inicio-sesion.html">
+                        <i class="material-icons">
+                            login
+                        </i>
+                        <span>
+                            Ingresar
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="registro-form">
+            <h2>
+                Registro
+            </h2>
+            <form action="../php/procesar_registro.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nombre">
+                        Nombre
+                        <p class="requerido">
+                            *
+                        </p>
+                    </label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">
+                        Apellido
+                        <p class="requerido">
+                            *
+                        </p>
+                    </label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">
+                        Correo Electrónico
+                        <p class="requerido">
+                            *
+                        </p>
+                    </label>
+                    <input type="email" id="correo" name="correo" placeholder="Correo Electronico" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">
+                        Contraseña
+                        <p class="requerido">
+                            *
+                        </p>
+                    </label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-nacimiento">
+                        Fecha de Nacimiento
+                        <p class="requerido">
+                            *
+                        </p>
+                    </label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                </div>
+                <div class="form-group">
+                    <label for="grado">
+                        Grado
+                    </label>
+                    <input type="number" id="grado" name="grado" placeholder="Grado">
+                </div>
+                <div class="form-group">
+                    <label for="grupo">
+                        Grupo
+                    </label>
+                    <input type="number" id="grupo" name="grupo" placeholder="Grupo">
+                </div>
+                <div class="form-group">
+                    <label for="intereses">
+                        Intereses
+                    </label>
+                    <input type="text" id="intereses" name="intereses" placeholder="Intereses">
+                </div>
+                <div class="form-group">
+                    <label for="foto-perfil">
+                        Foto de pefil
+                    </label>
+                    <input type="file" id="foto-perfil" name="foto-perfil" placeholder="Foto de perfil">
+                </div>
+                <div class="form-group">
+                    <button type="submit">
+                        Registrarse
+                    </button>
+                </div>
+            </form>
+            <p>
+                *Al registrase sera dirigido a inicia sesion.*
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+</body>
+</html>

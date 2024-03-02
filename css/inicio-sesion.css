@@ -1,0 +1,190 @@
+body {
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #218838, #1a7734), url('../img/pagina/Colegio.png');
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+header {
+    background-color: #218838;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: #1a7734;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.menu li:hover {
+    transform: translateY(-3px);
+}
+
+.menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: rgb(240, 128, 128);
+}
+
+.menu li a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+i {
+    font-size: 24px;
+}
+
+.inicio-sesion-form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    padding-left: 26px;
+    padding-right: 36px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.inicio-sesion-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.inicio-sesion-form p {
+    color: red;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+button {
+    background: linear-gradient(135deg,#3498db, rgb(29, 111, 170));
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.9s, color 0.3s transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+button:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    color: #fff;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #218838;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+footer a {
+    color: wheat;
+}
+
+footer:hover {
+    background-color: #1a7734;
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .logo, .menu {
+        margin: 10px 0;
+    }
+
+    .inicio-sesion-form {
+        width: 75%;
+        margin: 10px auto;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    label, input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="file"], input[type="number"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}

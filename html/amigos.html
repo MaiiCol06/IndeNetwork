@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeNetwork - Amigos</title>
+    <link rel="stylesheet" href="../css/amigos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="../img/pagina/Logo.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/pagina/Logo.png" alt="Logo de IndeNetwork2">
+                </a>
+                <h1>
+                    IndeNetwork - Amigos
+                </h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../html/muro.html">
+                        <i class="material-icons">
+                            home
+                        </i>
+                        <span>
+                            Inicio
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/mensajes.html">
+                        <i class="material-icons">
+                            chat
+                        </i>
+                        <span>
+                            Chat
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/grupos.html">
+                        <i class="material-icons">
+                            diversity_3
+                        </i>
+                        <span>
+                            Grupos
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor">
+
+            <section class="amigos-container">
+                <h3>
+                    <strong>
+                        Mis Amigos
+                    </strong>
+                </h3>
+                <div class="cuadro_busqueda">
+                    <form action="" method="get">
+                        <i class="material-icons">
+                            search
+                        </i>
+                        <input type="text" id="busqueda" name="busqueda">
+                    </form>
+                    <div id="resultado-busqueda">
+                        
+                    </div>
+                </div>
+                <div class="lista-amigos">
+
+                </div>
+            </section>
+
+            <section class="contenedor-profesores">
+                <h3>
+                    <strong>
+                        Profesores
+                    </strong>
+                </h3>
+                <div class="cuadro_busqueda">
+                    <form action="" method="get">
+                        <i class="material-icons">
+                            search
+                        </i>
+                        <input type="text" id="busqueda" name="busqueda">
+                    </form>
+                    <div id="resultado-busqueda">
+                        
+                    </div>
+                </div>
+                <div class="lista-profesores">
+
+                </div> 
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+    
+    <script src="../js/amigos.js">
+        document.addEventListener("DOMContentLoaded", function() {
+            var usuarioLogueado = localStorage.getItem("usuarioLogueado");
+            var esProfesor = sessionStorage.getItem("esProfesor");
+
+            if (!usuarioLogueado || esProfesor !== "true") {
+                window.location.href = "../html/inicio-sesion.html";
+            }
+        });
+    </script>
+</body>
+</html>

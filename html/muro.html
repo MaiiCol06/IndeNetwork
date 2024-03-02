@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>IndeNetwork - Muro</title>
+    <link rel="stylesheet" href="../css/muro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="../img/pagina/Logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" class="logo-background" aria-label="Logo de IndeNetwork">
+                </a>
+                <h1>
+                    IndeNetwork
+                </h1>
+                <i class="material-icons">
+                    search
+                </i>
+                <input type="text"/>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../html/mensajes.html">
+                        <i class="material-icons">
+                            chat
+                        </i>
+                        <span>
+                            Chat
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/amigos.html">
+                        <i class="material-icons">
+                            group
+                        </i>
+                        <span>
+                            Amigos
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/grupos.html">
+                        <i class="material-icons">
+                            diversity_3
+                        </i>
+                        <span>
+                            Grupos
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/perfil.html" id="perfilLink">
+                        <i class="material-icons">
+                            account_circle
+                        </i>
+                        <span>
+                            Perfil
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button id="refreshButton" class="boton-flotante refresh-button">
+            <i class="material-icons">
+                update
+            </i>
+        </button>
+        
+        
+        <section class="publicaciones">
+
+            <button id="mostrarFormulario" class="boton-flotante">
+                <i class="material-icons">
+                    edit_square
+                </i>
+            </button>
+
+            <div id="fondoDifuminado" class="fondo-difuminado"></div>
+
+            <div id="formularioPublicacion" class="formulario-publicacion">
+
+                <h2>Crear Publicación</h2>
+
+                <form id="formulario-publicacion" action="../php/procesar_publicacion.php" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <textarea name="texto" id="contenido" placeholder="Escribe tu publicación aqui..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen</label><br>
+                        <input type="file" name="imagen" id="imagen" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="archivo">Archivo</label><br>
+                        <input type="file" name="archivo" id="archivo" accept="file/*">
+                        <span id="mensaje-tamanio-archivo" class="mensaje-error"></span>
+                    </div>
+
+                    <button type="submit">Publicar</button>
+
+                    <button type="button" name="cancelar" onclick="redirectToProfile()">Cancelar</button>
+
+                </form>
+            </div>
+
+            <div id="publicaciones-container">
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+
+    <script src="../js/muro.js">
+        function redirectToProfile() {
+            window.location.href = "../html/perfil.html";
+        }
+    </script>
+
+    <div id="modal" style="display: none;">
+        <span id="closeModal" style="cursor: pointer;">
+            &times;
+        </span>
+        <img id="modalImage" style="max-width: 90%; max-height: 90%;">
+        <a id="downloadButton" href="" download style="display: none;">
+            <i class="material-icons">
+                file_download
+            </i>
+        </a>
+    </div>
+</body>
+</html>

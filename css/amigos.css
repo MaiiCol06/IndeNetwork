@@ -1,0 +1,149 @@
+body {
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #218838, #1a7734), url('../img/pagina/FondoHojas.png');
+    background-blend-mode: multiply;
+    background-size: 100%;
+    background-repeat: repeat-y;
+    color: #333;
+}
+
+header {
+    background-color: #218838;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: #1a7734;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.menu li:hover {
+    transform: translateY(-3px);
+}
+
+.menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: rgb(240, 128, 128);
+}
+
+.menu li a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+i {
+    font-size: 24px;
+    margin-left: 7px;
+}
+
+.amigos-container {
+    width: 770px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+}
+
+.contenedor {
+    display: flex;
+}
+
+.contenedor-profesores {
+    width: 430px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+}
+
+.contenedor-profesores .cuadro_busqueda {
+    margin: auto;
+}
+
+.amigos-container .cuadro_busqueda {
+    margin: auto;
+}
+
+#busqueda {
+    background-color: rgb(241, 241, 241);
+    border-color: rgb(241, 241, 241);
+}
+
+.lista-amigos li {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lista-amigos li:hover {
+    background-color: #1d6faa;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #218838;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+footer a {
+    color: wheat;
+}
+
+footer:hover {
+    background-color: #1a7734;
+}

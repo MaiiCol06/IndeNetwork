@@ -1,0 +1,485 @@
+body {
+    font-family: JetBrains Mono, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(70deg, #218838, #1a7734), url('../img/pagina/FondoHojas.png');
+    background-blend-mode: multiply;
+    background-size: 100%;
+    background-repeat: repeat-y;
+    color: #333;
+}
+
+header {
+    background-color: #218838;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: #1a7734;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-background {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-image: url('../img/pagina/Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 3s; /* Transición suave utilizando transform */
+}
+
+.logo-background:hover {
+    transform: scale(1.2); /* Aumenta el tamaño en un 50% */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.menu li:hover {
+    transform: translateY(-3px);
+}
+
+.menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: rgb(240, 128, 128);
+}
+
+.menu li a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+i {
+    margin-left: 8px;
+    font-size: 24px;
+}
+
+.publicaciones {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #ececec;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.publicacion {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.encabezado img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 5px rgba(0, 0, 0, 0.1);
+}
+
+.encabezado p {
+    font-weight: bold;
+    margin-left: 14px;
+    font-size: 18px;
+    margin-bottom: 37px;
+}
+
+.fecha-hora {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+    margin-top: -39px;
+    margin-left: 81px;
+}
+
+.publicacion .contenido {
+    word-wrap: break-word;
+}
+
+.texto {
+    font-size: 14px;
+    color: #000;
+}
+
+.imagen-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+ }
+ 
+ .imagen img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+ }
+
+ .archivo {
+    display: flex;
+    justify-content: space-between; /* Separa el nombre del archivo y el icono de descarga */
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #cfd0e6;
+    background-color: #dfe7ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.archivo:hover {
+    background-color: #95dd9b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.archivo i {
+    font-size: 24px;
+    color: #555555;
+}
+
+.archivo a {
+    text-decoration: none;
+    color: #2785c4;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.archivo a:hover i,
+.archivo a:focus i {
+    transform: scale(1.1);
+    color: rgb(64, 121, 170);
+}
+
+/* Contenedor para el nombre del archivo y el icono de tipo de archivo */
+.archivo .archivo-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+}
+
+/* Contenedor para el icono de descarga */
+.archivo .archivo-descarga {
+    display: flex;
+    align-items: center;
+}
+
+.archivo .archivo-descarga i {
+    margin-left: 8px; /* Espacio entre el nombre del archivo y el icono de descarga */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #218838;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+footer:hover {
+    background-color: #1a7734;
+}
+
+footer a {
+    color: wheat;
+}
+
+.boton-flotante{
+    position: fixed;
+    padding-right: 13px;
+    bottom: 25px;
+    right: 20px;
+    background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 35px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refresh-button {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 35px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.refresh-button:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    color: #fff;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.boton-flotante:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    color: #fff;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.fondo-difuminado {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.formulario-publicacion {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+.formulario-publicacion h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.formulario-publicacion textarea,
+.formulario-publicacion input[type="file"] {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.formulario-publicacion button[type="submit"] {
+    background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.formulario-publicacion button[type="submit"]:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    color: #fff;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.boton-comentario {
+    margin-top: 17px;
+}
+
+.boton-comentario button {
+    background: linear-gradient(135deg, rgb(29, 170, 97), rgb(69, 120, 165));
+    color: #fff;
+    padding: 7px 13px;
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.boton-comentario button:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    color: #fff;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modalContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modalImage {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+#closeModal {
+    position: absolute;
+    top: 280px; /* Bajado 50px desde la parte superior */
+    left: 50px; /* Movido 50px desde la izquierda */
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#downloadButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 280px; /* Bajado 50px desde la parte superior */
+    right: 50px; /* Movido 50px desde la derecha */
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+#downloadButton i {
+    font-size: 24px; /* Asegúrate de que el tamaño del icono sea el deseado */
+    margin: auto; /* Elimina cualquier margen que pueda desplazar el icono */
+}
+
+/* Aplica el estilo de los botones flotantes existentes */
+#closeModal, #downloadButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: auto;
+}
+
+#closeModal i, #downloadButton i {
+    font-size: 24px; /* O el tamaño que prefieras */
+}
+
+#closeModal:hover, #downloadButton:hover {
+    background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#closeModal:active, #downloadButton:active {
+    transform: scale(0.9);
+}
+.body-no-scroll {
+    overflow: hidden;
+}
+
+.logo-cora {
+    width: 28px;
+    height: 28px;
+    background-image: url('../img/pagina/CoraVacio.ico');
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+ @keyframes splash {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .logo-cora-splash {
+    animation: splash 0.5s;
+  }
+
+.logo-cora-lleno {
+    width: 28px;
+    height: 28px;
+    background-image: url('../img/pagina/CoraLleno.ico');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

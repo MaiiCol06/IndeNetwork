@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeNetwork - Grupos</title>
+    <link rel="stylesheet" href="../css/grupos.css">
+    <link rel="icon" href="../img/pagina/Logo.png">
+    <script src="../js/grupos.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/pagina/Logo.png" alt="Logo de IndeNetwork">
+                </a>
+                <h1>
+                    IndeNetwork - Grupos
+                </h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../html/muro.html">
+                        <i class="material-icons">
+                            home
+                        </i>
+                        <span>
+                            Inicio
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/mensajes.html">
+                        <i class="material-icons">
+                            chat
+                        </i>
+                        <span>
+                            chat
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../html/amigos.html">
+                        <i class="material-icons">
+                            group
+                        </i>
+                        <span>
+                            Amigos
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <button id="mostrarFormulario" class="boton-flotante oculto" style="display: none;">
+            <span class="icono_add material-symbols-outlined">
+                group_add
+            </span>
+        </button>
+
+        <div id="fondoDifuminado" class="fondo-difuminado"></div>
+        <div id="formularioGrupo" class="formulario-grupo">
+            <h2>Crear Grupo</h2>
+            <form id="formulario-grupo" action="../php/creacion_grupos.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="NombreGrupo" id="nombreGrupo" placeholder="Nombre del grupo" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="Descripcion" id="descripcionGrupo" placeholder="Descripción del grupo" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input type="file" name="FotoGrupo" id="fotoGrupo" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label>Privacidad</label>
+                    <select name="Privacidad" id="privacidad" required>
+                        <option value="">Selecciona la privacidad del grupo</option>
+                        <option value="Publico">Publico</option>
+                        <option value="Privado">Privado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select name="Categoria" id="categoria" required>
+                        <option value="">Selecciona la categoría del grupo</option>
+                        <option value="Extra Escolar">Extra Escolar</option>
+                        <option value="Escolar">Escolar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Asignatura</label>
+                    <select name="Asignatura" id="asignatura" required>
+                        <option value="">Selecciona la asignatura del grupo</option>
+                        <option value="Español">Español</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Química">Química</option>
+                        <option value="Fisica">Física</option>
+                        <option value="Sociales">C. Sociales</option>
+                        <option value="Economía">Economía</option>
+                        <option value="Geometria">Geometría</option>
+                        <option value="Estadistica">Estadística</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="C. Naturales">C. Naturales</option>
+                        <option value="Edu. Fisica">Edu. Física</option>
+                        <option value="Tecnología">Tecnología</option>
+                        <option value="Filosofia">Filosofía</option>
+                        <option value="Religion">Religión</option>
+                        <option value="Media Técnica">Media Técnica</option>
+                    </select>
+                </div>
+                <button type="submit">Crear Grupo</button>
+            </form>
+        </div>
+
+        <div class="contenedor">
+
+            <section class="contenido-grupos">
+                <h3>
+                    <strong>
+                        Publicaciones
+                    </strong>
+                </h3>
+                <div class="cuadro_busqueda">
+                    <form action="" method="get">
+                        <input type="text" id="busqueda" name="busqueda">
+                    </form>
+                    <div id="resultado-busqueda">
+                        
+                    </div>
+                </div>
+                <div class="publicacion-grupos">
+
+                </div>
+            </section>
+
+            <section class="contenedor-grupos">
+                <h3>
+                    <strong>
+                        Mis Grupos
+                    </strong>
+                </h3>
+                <div class="cuadro_busqueda">
+                    <form action="" method="get">
+                        <input type="text" id="busqueda" name="busqueda">
+                    </form>
+                    <div id="resultado-busqueda">
+                        
+                    </div>
+                </div>
+                <div class="lista-grupos">
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
+            var esProfesor = sessionStorage.getItem("esProfesor");
+
+            if (!usuarioLogueado && esProfesor !== "true") {
+                window.location.href = "../html/inicio-sesion.html";
+            }
+            if (esProfesor === "true") {
+                document.getElementById("mostrarFormulario").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
