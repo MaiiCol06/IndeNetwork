@@ -11,11 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
---
--- Base de datos: `id21450707_indenetwork`
---
-CREATE DATABASE IF NOT EXISTS `id21450707_indenetwork` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `id21450707_indenetwork`;
 
 -- --------------------------------------------------------
 
@@ -23,7 +18,6 @@ USE `id21450707_indenetwork`;
 -- Estructura de tabla para la tabla `Grupos`
 --
 
-DROP TABLE IF EXISTS `Grupos`;
 CREATE TABLE IF NOT EXISTS `Grupos` (
   `GrupoID` int(11) NOT NULL AUTO_INCREMENT,
   `NombreGrupo` varchar(255) NOT NULL,
@@ -43,7 +37,6 @@ CREATE TABLE IF NOT EXISTS `Grupos` (
 -- Estructura de tabla para la tabla `Likes`
 --
 
-DROP TABLE IF EXISTS `Likes`;
 CREATE TABLE IF NOT EXISTS `Likes` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Publicacion` int(11) DEFAULT NULL,
@@ -62,7 +55,6 @@ CREATE TABLE IF NOT EXISTS `Likes` (
 -- Estructura de tabla para la tabla `Profesores`
 --
 
-DROP TABLE IF EXISTS `Profesores`;
 CREATE TABLE IF NOT EXISTS `Profesores` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -84,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `Profesores` (
 -- Estructura de tabla para la tabla `Publicaciones`
 --
 
-DROP TABLE IF EXISTS `Publicaciones`;
 CREATE TABLE IF NOT EXISTS `Publicaciones` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Usuario` int(11) DEFAULT NULL,
@@ -104,7 +95,6 @@ CREATE TABLE IF NOT EXISTS `Publicaciones` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
