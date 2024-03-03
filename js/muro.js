@@ -160,5 +160,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Delegación de eventos para manejar clics en elementos .logo-cora generados dinámicamente
     document.addEventListener('click', toggleHeart);
     
-
 });
