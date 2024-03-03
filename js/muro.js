@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function mostrarModal(src) {
         document.getElementById('modal').style.display = 'flex';
         document.getElementById('modalImage').src = src;
-        document.getElementById('downloadButton').href = src; // Establece el enlace de descarga
-        document.getElementById('downloadButton').style.display = 'block'; // Muestra el botón de descarga
+        document.getElementById('downloadButton').href = src;
+        document.getElementById('downloadButton').style.display = 'block';
         document.body.classList.add('body-no-scroll');
     }
 
@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }; 
     
+
+    //FUNCION PARA LOS LIKES.
     function toggleHeart(event) {
         var logoCora = event.target;
         if (logoCora.classList.contains('logo-cora')) {
@@ -116,13 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
             var usuarioId = sessionStorage.getItem("usuarioId");
 
             if (logoCora.classList.contains('logo-cora-lleno')) {
-                // Volver a la imagen original sin animación
                 logoCora.style.backgroundImage = "url('../img/pagina/CoraVacio.ico')";
                 logoCora.classList.remove('logo-cora-lleno', 'logo-cora-splash');
-                // Eliminar like
                 procesarLike(publicacionId, usuarioId, esProfesor, false);
             } else {
-                // Cambiar a la imagen de "corazón lleno" con animación de salpicadura
                 logoCora.style.backgroundImage = "url('../img/pagina/CoraLleno.ico')";
                 logoCora.classList.add('logo-cora-lleno');
                 logoCora.classList.add('logo-cora-splash');
@@ -133,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function procesarLike(publicacionId, usuarioId, esProfesor, agregar) {
-        // Convertir valores booleanos a strings 'true' o 'false'
         var agregarStr = agregar ? 'true' : 'false';
         var esProfesorStr = esProfesor ? 'true' : 'false';
 
@@ -157,13 +155,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Delegación de eventos para manejar clics en elementos .logo-cora generados dinámicamente
     document.addEventListener('click', toggleHeart);
     
 
 
 
-    // Crear un contenedor para mostrar los resultados de la búsqueda
+    // FUNCION DE BUSQUEDA DE USUARIOS, PROFESORES Y GRUPOS.
     const buscadorGeneral = document.getElementById('buscador_general');
     if (!buscadorGeneral) {
         console.error('El elemento buscador_general no se encontró en el DOM.');
@@ -183,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
     contenedorResultados.style.zIndex = '1000';
     buscadorGeneral.parentNode.insertBefore(contenedorResultados, buscadorGeneral.nextSibling);
 
-    // Escuchar eventos de entrada en el input buscador_general
     buscadorGeneral.addEventListener('input', function() {
         const textoBusqueda = this.value.trim();
         if (textoBusqueda.length >= 3) {

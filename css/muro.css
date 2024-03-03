@@ -42,11 +42,11 @@ nav {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition: transform 3s; /* Transición suave utilizando transform */
+    transition: transform 3s;
 }
 
 .logo-background:hover {
-    transform: scale(1.2); /* Aumenta el tamaño en un 50% */
+    transform: scale(1.2);
 }
 
 .menu {
@@ -159,7 +159,7 @@ i {
 
  .archivo {
     display: flex;
-    justify-content: space-between; /* Separa el nombre del archivo y el icono de descarga */
+    justify-content: space-between;
     align-items: center;
     margin: 10px 0;
     padding: 10px;
@@ -195,21 +195,19 @@ i {
     color: rgb(64, 121, 170);
 }
 
-/* Contenedor para el nombre del archivo y el icono de tipo de archivo */
 .archivo .archivo-info {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+    flex-grow: 1;
 }
 
-/* Contenedor para el icono de descarga */
 .archivo .archivo-descarga {
     display: flex;
     align-items: center;
 }
 
 .archivo .archivo-descarga i {
-    margin-left: 8px; /* Espacio entre el nombre del archivo y el icono de descarga */
+    margin-left: 8px;
 }
 
 footer {
@@ -392,8 +390,8 @@ footer a {
 
 #closeModal {
     position: absolute;
-    top: 280px; /* Bajado 50px desde la parte superior */
-    left: 50px; /* Movido 50px desde la izquierda */
+    top: 280px;
+    left: 50px;
     color: #fff;
     font-size: 30px;
     font-weight: bold;
@@ -406,8 +404,8 @@ footer a {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 280px; /* Bajado 50px desde la parte superior */
-    right: 50px; /* Movido 50px desde la derecha */
+    top: 280px;
+    right: 50px;
     color: #fff;
     font-size: 30px;
     cursor: pointer;
@@ -436,7 +434,7 @@ footer a {
 }
 
 #closeModal i, #downloadButton i {
-    font-size: 24px; /* O el tamaño que prefieras */
+    font-size: 24px;
 }
 
 #closeModal:hover, #downloadButton:hover {
