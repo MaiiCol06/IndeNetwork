@@ -177,6 +177,10 @@ document.addEventListener("DOMContentLoaded", function () {
     contenedorResultados.style.padding = '10px';
     contenedorResultados.style.marginTop = '10px';
     contenedorResultados.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+    contenedorResultados.style.display = 'none';
+    contenedorResultados.style.width = '240px';
+    contenedorResultados.style.position = 'absolute';
+    contenedorResultados.style.zIndex = '1000';
     buscadorGeneral.parentNode.insertBefore(contenedorResultados, buscadorGeneral.nextSibling);
 
     // Escuchar eventos de entrada en el input buscador_general
@@ -186,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
             buscarUsuarios(textoBusqueda);
         } else {
             contenedorResultados.innerHTML = '';
+            contenedorResultados.style.display = 'none';
         }
     });
 
@@ -200,20 +205,43 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             contenedorResultados.innerHTML = '';
+            let hayResultados = false;
             data.usuarios.forEach(usuario => {
                 const divUsuario = document.createElement('div');
                 divUsuario.textContent = usuario.Nombre + ' ' + usuario.Apellido;
+                divUsuario.style.color = 'black';
                 contenedorResultados.appendChild(divUsuario);
+                hayResultados = true;
             });
             data.grupos.forEach(grupo => {
                 const divGrupo = document.createElement('div');
                 divGrupo.textContent = grupo.NombreGrupo;
+                divGrupo.style.color = 'black';
                 contenedorResultados.appendChild(divGrupo);
+                hayResultados = true;
             });
+            data.profesores.forEach(profesor => {
+                const divProfesor = document.createElement('div');
+                divProfesor.textContent = profesor.Nombre + ' ' + profesor.Apellido;
+                divProfesor.style.color = 'black';
+                contenedorResultados.appendChild(divProfesor);
+                hayResultados = true;
+            })
+            if (hayResultados) {
+                contenedorResultados.style.display = 'block';
+            } else {
+                contenedorResultados.style.display = 'block';
+                const divMensaje = document.createElement('div');
+                divMensaje.textContent = 'No se encontraron resultados o coincidencias';
+                divMensaje.style.color = 'black';
+                contenedorResultados.appendChild(divMensaje);
+            }
         })
         .catch(error => {
             console.error('Error al buscar usuarios:', error);
-            contenedorResultados.innerHTML = 'Error al buscar usuarios.';
+            const divErrorMensaje = document.createElement('div');
+            divErrorMensaje.textContent = 'Error al buscar';
+            divErrorMensaje.style.color = 'block';
         });
     }
 

@@ -34,8 +34,15 @@ $stmtGrupos->bind_param('s', $like);
 $stmtGrupos->execute();
 $resultGrupos = $stmtGrupos->get_result();
 
+$queryProfesores = "SELECT * FROM Profesores WHERE Nombre LIKE ? OR Apellido LIKE ?";
+$stmtProfesores = $conexion->prepare($queryProfesores);
+$stmtProfesores->bind_param('ss', $like, $like);
+$stmtProfesores->execute();
+$resultProfesores = $stmtProfesores->get_result();
+
 $usuarios = [];
 $grupos = [];
+$profesores = [];
 
 while ($row = $resultUsuarios->fetch_assoc()) {
     $usuarios[] = $row;
@@ -45,9 +52,14 @@ while ($row = $resultGrupos->fetch_assoc()) {
     $grupos[] = $row;
 }
 
+while ($row = $resultProfesores->fetch_assoc()) {
+    $profesores[] = $row;
+}
+
 $resultados = [
     'usuarios' => $usuarios,
-    'grupos' => $grupos
+    'grupos' => $grupos,
+    'profesores' => $profesores
 ];
 
 echo json_encode($resultados);
