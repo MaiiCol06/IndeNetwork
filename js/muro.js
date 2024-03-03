@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error al buscar usuarios:', error);
             const divErrorMensaje = document.createElement('div');
             divErrorMensaje.textContent = 'Error al buscar';
-            divErrorMensaje.style.color = 'block';
+            divErrorMensaje.style.color = 'black';
         });
     }
 
