@@ -160,4 +160,61 @@ document.addEventListener("DOMContentLoaded", function () {
     // Delegación de eventos para manejar clics en elementos .logo-cora generados dinámicamente
     document.addEventListener('click', toggleHeart);
     
+
+
+
+    // Crear un contenedor para mostrar los resultados de la búsqueda
+    const buscadorGeneral = document.getElementById('buscador_general');
+    if (!buscadorGeneral) {
+        console.error('El elemento buscador_general no se encontró en el DOM.');
+        return;
+    }
+
+    const contenedorResultados = document.createElement('div');
+    contenedorResultados.id = 'contenedorResultados';
+    contenedorResultados.style.backgroundColor = 'white';
+    contenedorResultados.style.borderRadius = '15px';
+    contenedorResultados.style.padding = '10px';
+    contenedorResultados.style.marginTop = '10px';
+    contenedorResultados.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+    buscadorGeneral.parentNode.insertBefore(contenedorResultados, buscadorGeneral.nextSibling);
+
+    // Escuchar eventos de entrada en el input buscador_general
+    buscadorGeneral.addEventListener('input', function() {
+        const textoBusqueda = this.value.trim();
+        if (textoBusqueda.length >= 3) {
+            buscarUsuarios(textoBusqueda);
+        } else {
+            contenedorResultados.innerHTML = '';
+        }
+    });
+
+    function buscarUsuarios(textoBusqueda) {
+        fetch('../php/buscar_usuarios.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `textoBusqueda=${encodeURIComponent(textoBusqueda)}`,
+        })
+        .then(response => response.json())
+        .then(data => {
+            contenedorResultados.innerHTML = '';
+            data.usuarios.forEach(usuario => {
+                const divUsuario = document.createElement('div');
+                divUsuario.textContent = usuario.Nombre + ' ' + usuario.Apellido;
+                contenedorResultados.appendChild(divUsuario);
+            });
+            data.grupos.forEach(grupo => {
+                const divGrupo = document.createElement('div');
+                divGrupo.textContent = grupo.NombreGrupo;
+                contenedorResultados.appendChild(divGrupo);
+            });
+        })
+        .catch(error => {
+            console.error('Error al buscar usuarios:', error);
+            contenedorResultados.innerHTML = 'Error al buscar usuarios.';
+        });
+    }
+
 });
