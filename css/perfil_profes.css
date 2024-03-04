@@ -167,11 +167,6 @@ footer a {
     color: wheat;
 }
 
-#aviso {
-    font-size: 15px;
-    color: #ff7f50;
-}
-
 @media only screen and (max-width: 600px) {
     body {
     background: linear-gradient(135deg, #218838, #1a7734), url('../img/pagina/Leaves.png')

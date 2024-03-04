@@ -41,7 +41,6 @@ if (isset($_SESSION['fk_usuario'])) {
         echo '<div class="biografia-container">';
         echo '<p class="biografia">' . $row['Biografia'] . '</p>';
         echo '</div>';
-        echo '<p id="aviso">*En el apartado Editar Perfil podrás cambiar tu información de perfil</p>';
         echo '</div>';
     }
 } else {
