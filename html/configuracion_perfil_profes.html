@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndeNetwork - Editar Perfil</title>
+    <link rel="stylesheet" href="../css/configuracion_perfil_profes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../img/pagina/Logo.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/pagina/Logo.png" alt="Logo de IndeNetwork">
+                </a>
+                <h1>
+                    IndeNetwork - Editar Perfil
+                </h1>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../html/perfil.html">
+                        <i class="material-icons">
+                            arrow_back
+                        </i>
+                        <span>
+                            Regresar
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="configuracion-perfil-form">
+            <h2>Configuración de Perfil</h2>
+            <form action="../php/procesar_configuracion_perfil.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nombre">Nuevo Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Nuevo Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Nueva Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Nueva Contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="area">Materia/Área</label>
+                    <input type="text" id="area" name="area" placeholder="Especialización">
+                </div>
+                <div class="form-group">
+                    <label for="biografia">Nueva Biografía</label>
+                    <textarea id="biografia" name="biografia" placeholder="Biografía"></textarea>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="foto-perfil">Cambiar Foto de Perfil</label>
+                    <input type="file" id="foto-perfil" name="foto-perfil">
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="guardar">Guardar Cambios</button>
+                    <button type="submit" name="cancelar">Cancelar</button>
+                </div>         
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Tu espacio ideal para resolver dudas y potenciar tu aprendizaje.
+        </p>
+        <a href="https://ieindependencia.edu.co">
+            I.E La Independencia
+        </a>
+        <p>
+            &copy; 2024 IndeNetwork
+        </p>
+    </footer>
+
+
+</body>
+</html>
