@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //FUNCION DE VERIFICACION DE INISIO DE SESION
     var usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
     var esProfesor = sessionStorage.getItem("esProfesor");
  
@@ -6,18 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "../html/inicio-sesion.html";
     }
 
+    //SE VERIFICA SI ES PROFESOR PARA ASIGANAR PAGINA DE PERFIL
     var esProfesor = sessionStorage.getItem("esProfesor");
     var perfilLink = document.getElementById('perfilLink');
- 
+    
     if (esProfesor === "true") {
         perfilLink.setAttribute('href', '../html/perfil_profes.html');
     }
-
+    
     cargarPublicaciones();
- 
+    
+    //FUNCION DEL BOTON DE REFRESCAR LA PAGINA/PUBLICACIONES
     const refreshButton = document.getElementById('refreshButton');
     refreshButton.addEventListener('click', cargarPublicaciones);
- 
+    
+    //FUNCION DEL BOTON PARA MOSTRAR EL FORMULARIO DE PUBLICACION
     const mostrarFormularioButton = document.getElementById('mostrarFormulario');
     const formularioPublicacion = document.getElementById('formularioPublicacion');
     const fondoDifuminado = document.getElementById('fondoDifuminado');
@@ -25,19 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         formularioPublicacion.style.display = 'block';
         fondoDifuminado.style.display = 'block';
     });
- 
     fondoDifuminado.addEventListener('click', () => {
         formularioPublicacion.style.display = 'none';
         fondoDifuminado.style.display = 'none';
     });
- 
+
+    //FUNCION PARA PROCESAR LA CARGA DE UNA PUBLICACION.
     const formulario = document.getElementById('formulario-publicacion');
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
         const contenido = document.getElementById('contenido').value;
- 
+        const botonPublicar = document.querySelector('.botonPublicar');
+
+        botonPublicar.setAttribute('data-disabled', 'true');
+        
         const formData = new FormData(formulario);
- 
+        
         fetch('../php/procesar_publicacion.php', {
             method: 'POST',
             body: formData,
@@ -52,12 +59,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                    alert('Error al publicar.');
                 }
+                botonPublicar.removeAttribute('data-disabled');
             })
             .catch(() => {
                 alert('Error al publicar.');
+                botonPublicar.removeAttribute('data-disabled');
+            });
+            botonPublicar.addEventListener('click', function(event) {
+                if (this.getAttribute('data-disabled') === 'true') {
+                    event.preventDefault();
+                }
             });
     });
 
+
+    //FUNCION PARA MOSTRAR MODAL DE LAS IMAGENES
     function mostrarModal(src) {
         document.getElementById('modal').style.display = 'flex';
         document.getElementById('modalImage').src = src;
@@ -66,11 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add('body-no-scroll');
     }
 
+    //FUNCION PARA CERRAR EL MODAL DE LAS IMAGENES
     function ocultarModal() {
         document.getElementById('modal').style.display = 'none';
         document.body.classList.remove('body-no-scroll');
     }
 
+    //FUNCION PARA MOSTRAR LAS PUBLICACIONES EN EL MURO
     function cargarPublicaciones() {
        const publicacionesContainer = document.getElementById('publicaciones-container');
        publicacionesContainer.innerHTML = 'Cargando...';
@@ -93,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
            });
     }
     
+    //FUNCION PARA ABRIR LAS IMAGENES
     window.onload = function() {
        var images = document.getElementsByTagName('img');
        for (var i = 0; i < images.length; i++) {
@@ -109,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }; 
     
 
-    //FUNCION PARA LOS LIKES.
+    //FUNCION PARA LOS LIKES
     function toggleHeart(event) {
         var logoCora = event.target;
         if (logoCora.classList.contains('logo-cora')) {
@@ -127,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoCora.classList.add('logo-cora-splash');
                 var agregar = !logoCora.classList.contains('logo-cora-lleno');
                 procesarLike(publicacionId, usuarioId, esProfesor, agregar);
-            }
+            };
         }
     }
 
@@ -240,5 +259,17 @@ document.addEventListener("DOMContentLoaded", function () {
             divErrorMensaje.style.color = 'black';
         });
     }
+
+    const botonCancelarPublicacion = document.querySelector('.botonCancelarPublicacion');
+    if (botonCancelarPublicacion) {
+        botonCancelarPublicacion.addEventListener('click', function() {
+            // Ocultar el formulario de publicación y el fondo difuminado
+            document.getElementById('formularioPublicacion').style.display = 'none';
+            document.getElementById('fondoDifuminado').style.display = 'none';
+        });
+    } else {
+        console.error('El botón de cancelar publicación no se encontró en el DOM.');
+    }
+
 
 });

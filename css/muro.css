@@ -337,29 +337,23 @@ footer a {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.boton-comentario {
-    margin-top: 17px;
-}
-
-.boton-comentario button {
-    background: linear-gradient(135deg, rgb(29, 170, 97), rgb(69, 120, 165));
+.botonCancelarPublicacion {
+    background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
     color: #fff;
-    padding: 7px 13px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 10px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.boton-comentario button:hover {
+.botonCancelarPublicacion:hover {
     background: linear-gradient(135deg, rgb(240, 128, 128), rgb(197, 78, 78));
     color: #fff;
     transform: scale(1.01);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
-
 
 #modal {
     display: none;
@@ -512,4 +506,8 @@ footer a {
 #contenedorResultados div {
     font-size: 13px;
     color: black;
+}
+
+div[style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"] {
+    visibility: none;
 }
