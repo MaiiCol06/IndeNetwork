@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         const contenido = document.getElementById('contenido').value;
         const botonPublicar = document.querySelector('.botonPublicar');
-
+        
+        botonPublicar.textContent = 'Cargando...';
+        botonPublicar.classList.add('boton-cargando');
         botonPublicar.setAttribute('data-disabled', 'true');
         
         const formData = new FormData(formulario);
@@ -59,10 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                    alert('Error al publicar.');
                 }
+                botonPublicar.textContent = 'Publicar';
+                botonPublicar.classList.remove('boton-cargando');
                 botonPublicar.removeAttribute('data-disabled');
             })
             .catch(() => {
                 alert('Error al publicar.');
+                botonPublicar.textContent = 'Publicar';                
+                botonPublicar.classList.remove('boton-cargando');
                 botonPublicar.removeAttribute('data-disabled');
             });
             botonPublicar.addEventListener('click', function(event) {
@@ -263,7 +269,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonCancelarPublicacion = document.querySelector('.botonCancelarPublicacion');
     if (botonCancelarPublicacion) {
         botonCancelarPublicacion.addEventListener('click', function() {
-            // Ocultar el formulario de publicación y el fondo difuminado
             document.getElementById('formularioPublicacion').style.display = 'none';
             document.getElementById('fondoDifuminado').style.display = 'none';
         });

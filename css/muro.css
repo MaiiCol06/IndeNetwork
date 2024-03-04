@@ -337,6 +337,18 @@ footer a {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
+.boton-cargando {
+    background: gold !important;
+    color: black !important;
+}
+
+.boton-cargando:hover {
+    background: gold !important;
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: black !important;
+}
+
 .botonCancelarPublicacion {
     background: linear-gradient(135deg, rgb(29, 111, 170), rgb(69, 120, 165));
     color: #fff;
