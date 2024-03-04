@@ -104,7 +104,9 @@ while ($row = mysqli_fetch_assoc($resultado)) {
     echo '<hr>';
 
     echo '<div class="interaciones">';
-    echo '<div class="logo-cora" id="logo-cora" data-publicacion-id="' . $row['ID'] . '"></div>';
+    echo '<div class="like" id="like" data-publicacion-id="' . $row['ID'] . '">';
+    echo '<button>Like</button>';
+    echo '</div>';
     echo '</div>';
 
     echo '</div>';

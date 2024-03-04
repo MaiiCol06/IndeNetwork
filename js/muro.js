@@ -135,31 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     //FUNCION PARA LOS LIKES
-    function toggleHeart(event) {
-        var logoCora = event.target;
-        if (logoCora.classList.contains('logo-cora')) {
-            var publicacionId = logoCora.getAttribute('data-publicacion-id');
-            var esProfesor = sessionStorage.getItem("esProfesor") === "true";
-            var usuarioId = sessionStorage.getItem("usuarioId");
-
-            if (logoCora.classList.contains('logo-cora-lleno')) {
-                logoCora.style.backgroundImage = "url('../img/pagina/CoraVacio.ico')";
-                logoCora.classList.remove('logo-cora-lleno', 'logo-cora-splash');
-                procesarLike(publicacionId, usuarioId, esProfesor, false);
-            } else {
-                logoCora.style.backgroundImage = "url('../img/pagina/CoraLleno.ico')";
-                logoCora.classList.add('logo-cora-lleno');
-                logoCora.classList.add('logo-cora-splash');
-                var agregar = !logoCora.classList.contains('logo-cora-lleno');
-                procesarLike(publicacionId, usuarioId, esProfesor, agregar);
-            };
-        }
-    }
-    //AQUI IRA LA FUNCION DE CONTEO Y SUBIDA DE LIKES*
-
-    document.addEventListener('click', toggleHeart);
-    
-
 
 
     // FUNCION DE BUSQUEDA DE USUARIOS, PROFESORES Y GRUPOS.
