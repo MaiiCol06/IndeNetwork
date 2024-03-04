@@ -155,30 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
         }
     }
-
-    function procesarLike(publicacionId, usuarioId, esProfesor, agregar) {
-        var agregarStr = agregar ? 'true' : 'false';
-        var esProfesorStr = esProfesor ? 'true' : 'false';
-
-        console.log(`Enviando solicitud para ${agregar ? 'agregar' : 'eliminar'} like:`, { publicacionId, usuarioId, esProfesor, agregar });
-    
-        fetch('../php/procesar_like.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `publicacionId=${publicacionId}&usuarioId=${usuarioId}&esProfesor=${esProfesorStr}&agregar=${agregarStr}`,
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (!data.success) {
-                alert('Error al procesar el like.');
-            }
-        })
-        .catch(() => {
-            alert('Error al procesar el like.');
-        });
-    }
+    //AQUI IRA LA FUNCION DE CONTEO Y SUBIDA DE LIKES*
 
     document.addEventListener('click', toggleHeart);
     
